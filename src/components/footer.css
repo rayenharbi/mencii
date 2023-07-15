@@ -1,0 +1,59 @@
+@keyframes slideInFromBottom {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  .footer {
+    background-color: #212529;
+    color: #adb5bd;
+    padding: 20px 0;
+    animation: slideInFromBottom 1.1s ease;
+  }
+  
+  .footer_container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer-section {
+    margin-right: 30px;
+  }
+  
+  .contact {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact h3 {
+    margin-bottom: 10px;
+  }
+  
+  .social-icons {
+    display: flex;
+  }
+  
+  .social-icons a:hover {
+    color: blue; /* Change the color to your desired hover color */
+  }
+  .social-icons svg {
+    margin-right: 10px;
+  }
+  
+  .footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+
+  

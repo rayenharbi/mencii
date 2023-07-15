@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import Home from './pages/Home';
+import Product from './pages/Product';
+import Cart from './pages/Cart'
+import { BrowserRouter as Router ,  Route } from 'react-router-dom';
+import { Switch } from 'react-router-dom/cjs/react-router-dom.min';
+import Contact from './pages/Contact';
+import img4 from "./assets/img4.jpg"
+import video from "./assets/video.mp4"
+import ConsoleAnimation from './pages/ConsoleAnimation';
 
-function App() {
+
+
+
+const App = () => {
+
+  const user = true
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='Container'   >
+     
+    <Router  >
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/product/">
+          <Product/>
+        </Route>
+        <Route path="/contact">
+          <Contact/>
+        </Route>
+        <Route  path="/cart">
+          <Cart/>
+        </Route>
+        <Route  path="/animate">
+          <ConsoleAnimation/>
+        </Route>
+      </Switch>
+    </Router>
     </div>
-  );
-}
+  )
+    
+};
 
 export default App;
