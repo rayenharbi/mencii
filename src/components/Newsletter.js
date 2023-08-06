@@ -4,11 +4,12 @@ import { mobile } from "../responsive";
 
 const Container = styled.div`
   height: 60vh;
-  background-color: #e9f5f5;
+  background-color: lightgray;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  
 `;
 const Title = styled.h1`
   font-size: 70px;
@@ -19,8 +20,8 @@ const Desc = styled.div`
   font-size: 24px;
   font-weight: 300;
   margin-bottom: 20px;
-  ${mobile({ textAlign: "center" })}
-
+  ${mobile({ textAlign: "center" })};
+ 
 `;
 
 const InputContainer = styled.div`
@@ -30,6 +31,7 @@ const InputContainer = styled.div`
   display: flex;
   justify-content: space-between;
   border: 1px solid lightgray;
+  border-radius: 20px;
   ${mobile({ width: "80%" })}
 `;
 
@@ -37,13 +39,15 @@ const Input = styled.input`
   border: none;
   flex: 8;
   padding-left: 20px;
+  border-radius: 20px;
 `;
 
 const Button = styled.button`
-  flex: 1;
+  flex: 2;
   border: none;
-  background-color: teal;
+  background-color: gray;
   color: white;
+  border-radius: 20px;
 `;
 
 const Newsletter = () => {

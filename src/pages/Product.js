@@ -1,17 +1,18 @@
 import  styled  from "styled-components";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
+import Newsletter from "../components/Newsletter";
 import { Add, Remove } from "@material-ui/icons";
 import ProductSlider from '../components/ProductSlider';
 import img2 from '../assets/img2.jpg'
 import img3 from '../assets/img3.jpg'
 import img from '../assets/img.jpg'
+import { useLocation } from "react-router-dom";
 import { mobile } from "../responsive";
-
+import { publicRequest } from "../requestMethods";
 import { useEffect, useState } from "react";
 import { addProduct } from "../redux/cartRedux";
-import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";;
 
 
 
@@ -131,27 +132,37 @@ const Button = styled.button`
 const Product = () => {
 
 
-  const [quantity,setQuantity] = useState(1);
+  const location = useLocation();
+  const id = location.pathname.split("/")[2];
   const [product, setProduct] = useState({});
+  const [quantity, setQuantity] = useState(1);
+  const [color, setColor] = useState("");
+  const [size, setSize] = useState("");
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    const getProduct = async () => {
+      try {
+        const res = await publicRequest.get("/products/find/" + id);
+        setProduct(res.data);
+      } catch {}
+    };
+    getProduct();
+  }, [id]);
 
+  const handleQuantity = (type) => {
+    if (type === "dec") {
+      quantity > 1 && setQuantity(quantity - 1);
+    } else {
+      setQuantity(quantity + 1);
+    }
+  };
 
-
-  
-
-const handleQuantity = (type) =>{
-  if (type === "dec") {
-   quantity >1 && setQuantity(quantity -1);
-  
-  }else {
-    setQuantity(quantity + 1 );
-  }
-}
- const handleClick=() =>{
- dispatch(addProduct({product, quantity}));
-  
- }
+  const handleClick = () => {
+    dispatch(
+      addProduct({ ...product, quantity, color, size })
+    );
+  };
  
 
   const productImages = [
@@ -181,16 +192,22 @@ const handleQuantity = (type) =>{
           <FilterContainer>
             <Filter>
             <FilterTitle>Color</FilterTitle>
-              <FilterColor color="black" />
+            {product.color?.map((c) => (
+                <FilterColor color={c} key={c} onClick={() => setColor(c)} />
+              ))}
               </Filter>
               <Filter>
               <FilterTitle>Size</FilterTitle>
-              <FilterSize>
+              <FilterSize onChange={(e) => setSize(e.target.value)}>
+                {product.size?.map((s) => (
+                  <FilterSizeOption key={s}>{s}</FilterSizeOption>
+                ))}
+
                 
+                <FilterSizeOption>S</FilterSizeOption>
                 <FilterSizeOption>M</FilterSizeOption>
                 <FilterSizeOption>L</FilterSizeOption>
                 <FilterSizeOption>XL</FilterSizeOption>
-                <FilterSizeOption>XXL</FilterSizeOption>
                 
               </FilterSize>
             </Filter>
@@ -201,15 +218,15 @@ const handleQuantity = (type) =>{
               <Amount>{quantity}</Amount>
               <Add onClick={()=>handleQuantity("inc")}/>
             </AmountContainer>
-            <Button onClick={handleClick}>ADD TO CART</Button>
+            <Button onClick={handleClick}>ADD TO BAG</Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>
-      
+      <Newsletter />
       <Footer />
       
     </Container>
   )
   }
 
-export default Product
+export default Product ;

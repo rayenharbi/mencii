@@ -4077,6 +4077,11 @@ default-gateway@^6.0.3:
   dependencies:
     execa "^5.0.0"
 
+deferral@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/deferral/-/deferral-1.0.0.tgz#79e0dd87498443a03158210a9d86e1023dcf7704"
+  integrity sha512-XczBL7vecRo+8hbytvPTNYieILCHQ08JzeSWcnKLv8tRAHGxqJ+yMU1Gi+4DrH8cbLbpcEdN2OowJpTE840fZg==
+
 define-lazy-prop@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/define-lazy-prop/-/define-lazy-prop-2.0.0.tgz"
@@ -6730,6 +6735,11 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.npmjs.org/lines-and-columns/-/lines-and-columns-1.2.4.tgz"
   integrity sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==
 
+little-loader@0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/little-loader/-/little-loader-0.2.0.tgz#d572b842ab95ab6fab40571f79514ad49ab8d9bd"
+  integrity sha512-MYNYfBqP/f5C7XO6MR2cylmAzAKgBkDD1UGZ4KjxFviV3mKbjOEnxVj1nhnN3i2zcwbkPeUDsjAMjLnlL9kRLA==
+
 loader-runner@^4.2.0:
   version "4.3.0"
   resolved "https://registry.npmjs.org/loader-runner/-/loader-runner-4.3.0.tgz"
@@ -8430,6 +8440,11 @@ react-spring@^9.7.2:
     "@react-spring/web" "~9.7.3"
     "@react-spring/zdog" "~9.7.3"
 
+react-stripe-checkout@^2.6.3:
+  version "2.6.3"
+  resolved "https://registry.yarnpkg.com/react-stripe-checkout/-/react-stripe-checkout-2.6.3.tgz#3173a870b04e5a3c321a06d24cd53c6030111c45"
+  integrity sha512-lnsCaAdlmwPGGMbQoI8FXtQUgEm+ktzPZ/ipAw4j0HYf80kef7CivGx6QitmgEn99/aa5hI/dmVXwfVZW/Mzfg==
+
 react-text-loop@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/react-text-loop/-/react-text-loop-2.3.0.tgz#c4035b1f3fb8216b34ed93f3160025fc7b1af3b7"
@@ -9237,6 +9252,14 @@ strip-json-comments@^3.1.0, strip-json-comments@^3.1.1:
   version "3.1.1"
   resolved "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-3.1.1.tgz"
   integrity sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==
+
+stripe-checkout@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/stripe-checkout/-/stripe-checkout-1.0.9.tgz#37ee8128358c0693d8ccb9e4c30e21f308333600"
+  integrity sha512-9kf8G/wY8XPXp/aPZ/nIm56+iC6wX/WihYG8cx458LHGLymcMNKAdfZCJSfdXbXE9tLlHzW0vRGxAMFQmU1cNA==
+  dependencies:
+    deferral "^1.0.0"
+    little-loader "0.2.0"
 
 style-loader@^3.3.1:
   version "3.3.3"

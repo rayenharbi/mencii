@@ -27,8 +27,10 @@
     "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
     "react-spring": "^9.7.2",
+    "react-stripe-checkout": "^2.6.3",
     "react-text-loop": "^2.3.0",
     "slick-carousel": "^1.8.1",
+    "stripe-checkout": "^1.0.9",
     "styled-components": "^6.0.0-rc.5",
     "web-vitals": "^2.1.4",
     "yup": "^1.2.0"

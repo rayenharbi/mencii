@@ -12,7 +12,7 @@ import {useSelector} from "react-redux";
 
 
 const Container = styled.div`
-  height: 70px;
+  height: 80px;
   ${mobile({ height: "50px" })}
   background-color:#212529;
   
@@ -95,10 +95,7 @@ const Navbar = () => {
    <Wrapper>
       <Left>
         <Language>EN</Language>
-        <SearchContainer>
-          <Input placeholder="Search"/>
-          <Search style={{color:'lightgray', fontSize:16}}/>
-        </SearchContainer>
+       
         </Left>
       <Center>
         <Link to= {'/'}>
@@ -110,9 +107,11 @@ const Navbar = () => {
         </Link>
         <MenuItem>ABOUT</MenuItem>
         <MenuItem>
+        <Link to={"/cart"}>
         <Badge badgeContent={quantity} color='primary'>
           <ShoppingCartOutlined style={{color:'lightgray'}}/>
         </Badge>
+        </Link>
         </MenuItem>
         </Right>
   </Wrapper>

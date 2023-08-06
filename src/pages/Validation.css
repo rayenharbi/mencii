@@ -1,0 +1,39 @@
+/* Styling for the form container */
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: lightgray;
+  }
+  
+  /* Styling for the form labels */
+  .form-label {
+    font-weight: bold;
+  }
+  
+  /* Styling for the input fields */
+  .form-control {
+    margin-bottom: 10px;
+  }
+  
+  /* Styling for the feedback messages */
+  .form-control-feedback {
+    font-size: 12px;
+    color: red;
+  }
+  
+  /* Styling for the submit button */
+  .submit-button {
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  /* Styling for the submit button on hover */
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  

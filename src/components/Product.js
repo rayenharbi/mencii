@@ -27,13 +27,15 @@ const Info = styled.div`
 const Container = styled.div`
    flex: 1;
   margin: 5px;
-  min-width: 280px;
-  height: 350px;
+  min-width: 250px;
+  width:250px;
+  height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f5fbfd;
+  background-color: white;
   position: relative;
+  border-radius:20px;
   
   
 
@@ -96,6 +98,7 @@ const Product = ({ item }) => {
         <Icon>
           <Link to ={`/product/`}>
           <SearchOutlined />
+
           </Link>
         </Icon>
         <Icon>
